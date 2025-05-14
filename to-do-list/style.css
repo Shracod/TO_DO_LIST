@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #ff69b4, #8a2be2, #00bfff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+}
+
+#clock {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: bold;
+    z-index: 1000;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.todo-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out;
+}
+
+h1 {
+    font-size: 2em;
+    color: #00bfff;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.todo-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    vertical-align: middle;
+    transition: all 0.3s ease;
+}
+
+h1:hover .todo-icon {
+    transform: rotate(360deg);
+}
+
+#input-box,
+#reminder-time {
+    width: 80%;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 12px;
+    border: 2px solid #00bfff;
+    margin-bottom: 15px;
+    background-color: #e0f7fa;
+    color: #333;
+    transition: all 0.3s ease-in-out;
+}
+
+#input-box:focus,
+#reminder-time:focus {
+    border-color: #007acc;
+    background-color: #ffffff;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 18px;
+    background-color: #00bfff;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    width: 85%;
+    margin-bottom: 20px;
+}
+
+button:hover {
+    background-color: #007acc;
+    transform: scale(1.1);
+}
+
+ul {
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+li {
+    background-color: #f7f7f7;
+    color: #333;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(20px);
+    opacity: 0;
+    animation: slideUp 0.5s ease-out forwards;
+}
+
+li.completed {
+    background-color: #b2ebf2;
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.icons {
+    display: flex;
+    gap: 15px;
+}
+
+.icons i {
+    cursor: pointer;
+    color: #007acc;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.icons i:hover {
+    color: #ff1493;
+    transform: scale(1.2);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
